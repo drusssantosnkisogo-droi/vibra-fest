@@ -1,0 +1,648 @@
+
+/* =========================================
+   VIBRA FEST 2027
+   ESTILOS GENERALES - UD7
+   Diseño responsive mobile first
+========================================= */
+
+/* 1. RESET GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #100B20;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* 2. CABECERA */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #100B20;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #F15BB5;
+}
+
+/* 3. MENÚ DE NAVEGACIÓN */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a[aria-current="page"] {
+    color: #F15BB5;
+}
+
+/* Botón de menú móvil */
+
+.menu-movil {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 4. PORTADA */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 8%;
+    gap: 15px;
+}
+
+.hero-contenido {
+    max-width: 650px;
+}
+
+.subtitulo {
+    color: #F15BB5;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 12vw, 130px);
+    line-height: 0.95;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+}
+
+.hero h1 span {
+    color: #9B5DE5;
+}
+
+.descripcion {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 25px;
+    max-width: 500px;
+}
+
+.fecha {
+    color: #FEE440;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.ubicacion {
+    margin-top: 10px;
+    color: #cccccc;
+}
+
+/* 5. BOTONES */
+
+.boton-entradas {
+    display: inline-block;
+    background-color: #F15BB5;
+    color: white;
+    text-decoration: none;
+    padding: 16px 25px;
+    margin-top: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* 6. SECCIÓN DE ARTISTAS */
+
+.artistas {
+    padding: 80px 8%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion h2 {
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.titulo-seccion h2 span {
+    color: #F15BB5;
+}
+
+.titulo-seccion > p:last-child {
+    color: #cccccc;
+}
+
+/* Tarjetas de artistas */
+
+.contenedor-artistas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.tarjeta-artista {
+    background-color: #211633;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.tarjeta-artista img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.info-artista {
+    padding: 20px;
+}
+
+.info-artista h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.info-artista p {
+    color: #F15BB5;
+}
+
+/* Enlace a todos los artistas */
+
+.enlace-artistas {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* 7. FAVORITOS */
+
+.boton-favorito {
+    background: transparent;
+    border: 2px solid #F15BB5;
+    color: #F15BB5;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.boton-favorito.activo {
+    background-color: #F15BB5;
+    color: white;
+}
+
+/* 8. SECCIÓN DE ENTRADAS */
+
+.entradas {
+    padding: 80px 8%;
+    background-color: #171126;
+}
+
+.contenedor-entradas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.tarjeta-entrada {
+    background-color: #251936;
+    padding: 35px 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #49305f;
+    min-width: 0;
+}
+
+.tarjeta-entrada h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.precio {
+    font-size: 55px;
+    font-weight: bold;
+    color: #F15BB5;
+    margin-bottom: 15px;
+}
+
+.tarjeta-entrada > p:not(.precio):not(.etiqueta) {
+    color: #cccccc;
+}
+
+.tarjeta-entrada .boton-entradas {
+    margin-top: 25px;
+}
+
+.destacada {
+    border: 2px solid #F15BB5;
+}
+
+.etiqueta {
+    color: #FEE440;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 9. CONTACTO */
+
+.contacto {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: clamp(28px, 5vw, 45px);
+    margin: 20px 0;
+}
+
+.contacto h2 span {
+    color: #F15BB5;
+}
+
+.contacto > p:not(.subtitulo) {
+    color: #cccccc;
+}
+
+/* 10. GUÍA DE MOVIMIENTO */
+
+main > section:not(.hero) {
+    padding: 65px 8%;
+}
+
+main > section h2 {
+    color: #F15BB5;
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: 25px;
+}
+
+main > section h3 {
+    color: #FEE440;
+    font-size: 21px;
+    margin: 25px 0 12px;
+}
+
+main > section p {
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+main > section ul {
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+main > section li {
+    margin-bottom: 12px;
+    color: #dddddd;
+}
+
+main > section li strong {
+    color: #F15BB5;
+}
+
+/* Tablas de la guía */
+
+main > section table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 25px 0 35px;
+    background-color: #211633;
+    border-radius: 8px;
+}
+
+main > section th,
+main > section td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #49305f;
+    min-width: 110px;
+}
+
+main > section th {
+    background-color: #49305f;
+    color: #FEE440;
+}
+
+main > section td {
+    color: #eeeeee;
+}
+
+/* 11. PIE DE PÁGINA */
+
+footer {
+    background-color: #080611;
+    padding: 35px 8%;
+    text-align: center;
+    line-height: 2;
+}
+
+footer a {
+    color: #F15BB5;
+    text-decoration: none;
+}
+
+/* 12. ESTADOS DE ACCESIBILIDAD */
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #FEE440;
+    outline-offset: 5px;
+}
+
+/* 13. TABLET */
+
+@media (min-width: 601px) {
+
+    .contenedor-artistas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-entradas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* 14. ORDENADOR */
+
+@media (min-width: 900px) {
+
+    .contenedor-artistas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contenedor-entradas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* 15. MÓVILES */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 5%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu-movil {
+        display: block;
+    }
+
+    header nav {
+        width: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            max-height 350ms ease,
+            opacity 350ms ease,
+            visibility 350ms ease;
+    }
+
+    header nav.activo {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 13vw, 75px);
+    }
+
+    .artistas,
+    .entradas,
+    .contacto {
+        padding: 60px 5%;
+    }
+
+    main > section:not(.hero) {
+        padding: 50px 5%;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 30px;
+    }
+
+    .tarjeta-artista img {
+        height: 230px;
+    }
+
+    main > section table {
+        font-size: 14px;
+    }
+
+    main > section th,
+    main > section td {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 30px 5%;
+    }
+
+}
+
+/* 16. PANTALLAS PEQUEÑAS */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .precio {
+        font-size: 43px;
+    }
+
+    .tarjeta-entrada {
+        padding: 25px 15px;
+    }
+
+}
+
+/* 17. MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* PORTADA CON GIF */
+
+.hero {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 7%;
+}
+
+.hero-contenido {
+    max-width: 650px;
+    width: 100%;
+}
+
+.hero-video {
+    width: 100%;
+}
+
+.video-marco {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 2px solid #9B5DE5;
+    box-shadow:
+        0 0 15px #9B5DE5,
+        0 0 35px rgba(241, 91, 181, 0.5);
+    animation: brillo-festival 3s infinite alternate;
+}
+
+.video-marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-etiqueta {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 2;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.punto-luz {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #F15BB5;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 12px #F15BB5;
+    animation: parpadeo 1s infinite alternate;
+}
+
+@keyframes brillo-festival {
+    from {
+        box-shadow: 0 0 12px #9B5DE5;
+    }
+    to {
+        box-shadow: 0 0 35px #F15BB5;
+    }
+}
+
+@keyframes parpadeo {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* MÓVILES */
+
+@media (max-width: 600px) {
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .hero-video {
+        width: 100%;
+    }
+
+}
+

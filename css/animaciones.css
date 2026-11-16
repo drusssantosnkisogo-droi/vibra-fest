@@ -1,0 +1,186 @@
+
+/* =========================================
+   VIBRA FEST 2027
+   MOVIMIENTO CON INTENCIÓN - UD7
+   Carácter: enérgico, rítmico y dinámico.
+   El movimiento dirige la atención y comunica
+   cuándo un elemento responde al usuario.
+   ========================================= */
+
+
+/* 1. TOKENS DE MOVIMIENTO */
+
+:root {
+  --dur-rapida: 150ms;
+  --dur-media: 350ms;
+  --dur-lenta: 700ms;
+
+  --curva-entrada: cubic-bezier(.2, .8, .2, 1);
+  --curva-salida: cubic-bezier(.4, 0, 1, 1);
+}
+
+
+/* 2. TRANSICIONES GENERALES */
+
+/* Los elementos interactivos responden con rapidez.
+   Se animan transform y opacity para evitar repintados
+   innecesarios. */
+
+a,
+button,
+.tarjeta-artista,
+.boton-favorito {
+  transition:
+    transform var(--dur-rapida) var(--curva-entrada),
+    opacity var(--dur-rapida) var(--curva-entrada),
+    box-shadow var(--dur-rapida) var(--curva-entrada);
+}
+
+
+/* 3. ESTADOS DE INTERACCIÓN */
+
+/* El foco visible permite navegar con teclado. */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* La pulsación proporciona confirmación visual. */
+
+a:active,
+button:active {
+  transform: scale(.96);
+  opacity: .85;
+}
+
+/* El hover solo se activa en dispositivos que
+   realmente tienen ratón o puntero. */
+
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    transform: translateY(-3px);
+  }
+
+  .tarjeta-artista:hover {
+    transform: perspective(1000px) rotateY(4deg) translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+  }
+
+  .boton-favorito:hover {
+    transform: scale(1.15);
+  }
+}
+
+
+/* 4. ANIMACIÓN DE ENTRADA DEL HERO */
+
+/* El titular aparece progresivamente para establecer
+   la jerarquía visual al entrar en la página. */
+
+@keyframes entradaHero {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: entradaHero var(--dur-lenta) var(--curva-entrada) both;
+}
+
+.hero p {
+  animation: entradaHero var(--dur-lenta) var(--curva-entrada) both;
+  animation-delay: 150ms;
+}
+
+
+/* 5. APARICIÓN DE LAS TARJETAS AL HACER SCROLL */
+
+/* Las tarjetas se revelan cuando entran en pantalla.
+   Así se relaciona el movimiento con el descubrimiento
+   progresivo del cartel del festival. */
+
+@keyframes revelarTarjeta {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Solo se activa si el navegador admite view timelines.
+   Si no hay soporte, las tarjetas se muestran normalmente. */
+
+@supports (animation-timeline: view()) {
+  .tarjeta-artista {
+    animation: revelarTarjeta linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+
+/* 6. MICROINTERACCIÓN DE FAVORITOS */
+
+/* El corazón crece ligeramente al activarse.
+   El cambio de estado también se comunica mediante
+   el propio icono y aria-pressed desde JavaScript. */
+
+.boton-favorito.activo {
+  transform: scale(1.15);
+}
+
+
+/* 7. MENÚ MÓVIL */
+
+/* La apertura y el cierre se gestionan con las clases
+   del menú existente. La altura y visibilidad se controlan
+   en estilos.css; aquí se define su suavidad visual. */
+
+#menu-principal {
+  transition:
+    opacity var(--dur-media) var(--curva-entrada),
+    transform var(--dur-media) var(--curva-entrada);
+}
+
+#menu-principal.activo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* 8. ACCESIBILIDAD: MOVIMIENTO REDUCIDO */
+
+/* Si el usuario prefiere menos movimiento, se eliminan
+   las animaciones y transiciones no esenciales.
+   El contenido permanece visible y funcional. */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero h1,
+  .hero p,
+  .tarjeta-artista {
+    opacity: 1;
+    transform: none;
+  }
+}

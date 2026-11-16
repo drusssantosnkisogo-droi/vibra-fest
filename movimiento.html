@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Guía de movimiento y animaciones de VIBRA FEST 2027.">
+
+    <title>Guía de movimiento | VIBRA FEST 2027</title>
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+</head>
+
+<body class="pagina-movimiento">
+
+    <!-- =================================
+         CABECERA Y NAVEGACIÓN
+    ================================== -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            VIBRA FEST <span>2027</span>
+        </a>
+
+        <!-- Botón menú móvil -->
+        <button
+            class="menu-movil"
+            id="boton-menu"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="menu-principal">
+            ☰
+        </button>
+
+        <!-- Navegación principal -->
+        <nav id="menu-principal">
+
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="artistas.html">Artistas</a>
+                </li>
+
+                <li>
+                    <a href="movimiento.html" aria-current="page">
+                        Movimiento
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================
+             PORTADA
+        ================================== -->
+
+        <section class="hero">
+
+            <div class="hero-contenido">
+
+                <p class="subtitulo">
+                    DOCUMENTACIÓN DEL PROYECTO · UD7
+                </p>
+
+                <h1>
+                    GUÍA DE
+                    <span>MOVIMIENTO</span>
+                </h1>
+
+                <p class="descripcion">
+                    Cada movimiento tiene una intención.
+                    Descubre cómo las animaciones de VIBRA FEST 2027
+                    transmiten energía y mejoran la experiencia
+                    de navegación.
+                </p>
+
+                <p class="fecha">
+                    MOVIMIENTO CON INTENCIÓN
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             01. FILOSOFÍA
+        ================================== -->
+
+        <section>
+
+            <h2>01. Filosofía del movimiento</h2>
+
+            <p>
+                El movimiento de VIBRA FEST 2027 está diseñado
+                para transmitir la personalidad de un festival
+                musical: energía, música y dinamismo.
+            </p>
+
+            <p>
+                Las animaciones no se utilizan únicamente como
+                decoración. Cada una tiene una función concreta:
+                dirigir la atención, comunicar una interacción
+                o ayudar al usuario a descubrir el contenido.
+            </p>
+
+            <h3>Carácter del movimiento</h3>
+
+            <ul>
+                <li>
+                    <strong>Enérgico:</strong>
+                    transmite la fuerza y emoción de la música.
+                </li>
+
+                <li>
+                    <strong>Rítmico:</strong>
+                    utiliza tiempos y transiciones que acompañan
+                    la identidad del festival.
+                </li>
+
+                <li>
+                    <strong>Dinámico:</strong>
+                    facilita la navegación y mantiene el interés visual.
+                </li>
+            </ul>
+
+        </section>
+
+
+        <!-- =================================
+             02. TOKENS
+        ================================== -->
+
+        <section>
+
+            <h2>02. Tokens de movimiento</h2>
+
+            <p>
+                Los tokens permiten mantener la coherencia
+                entre todas las animaciones de la web.
+                Se definen en :root dentro del archivo
+                css/animaciones.css.
+            </p>
+
+            <h3>Duraciones</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Valor</th>
+                        <th>Uso</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>--dur-rapida</td>
+                        <td>150 ms</td>
+                        <td>Botones, enlaces y pulsaciones.</td>
+                    </tr>
+
+                    <tr>
+                        <td>--dur-media</td>
+                        <td>350 ms</td>
+                        <td>Menú móvil y transiciones.</td>
+                    </tr>
+
+                    <tr>
+                        <td>--dur-lenta</td>
+                        <td>700 ms</td>
+                        <td>Entrada de los titulares.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+
+            <h3>Curvas de movimiento</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Valor</th>
+                        <th>Función</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>--curva-entrada</td>
+                        <td>cubic-bezier(.2, .8, .2, 1)</td>
+                        <td>Entrada suave que termina frenando.</td>
+                    </tr>
+
+                    <tr>
+                        <td>--curva-salida</td>
+                        <td>cubic-bezier(.4, 0, 1, 1)</td>
+                        <td>Salida progresivamente acelerada.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- =================================
+             03. TABLA DE ANIMACIONES
+        ================================== -->
+
+        <section>
+
+            <h2>03. Tabla de animaciones</h2>
+
+            <p>
+                Cada animación tiene un propósito concreto
+                dentro de la experiencia de usuario.
+            </p>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Tipo</th>
+                        <th>Propiedades</th>
+                        <th>Duración</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Titular del hero</td>
+                        <td>@keyframes entradaHero</td>
+                        <td>Opacity y transform</td>
+                        <td>700 ms</td>
+                        <td>
+                            Dirigir la atención hacia el título principal.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Texto del hero</td>
+                        <td>@keyframes entradaHero</td>
+                        <td>Opacity y transform</td>
+                        <td>700 ms + retraso</td>
+                        <td>
+                            Crear una entrada progresiva del contenido.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Tarjetas de artistas</td>
+                        <td>Scroll / view()</td>
+                        <td>Opacity y transform</td>
+                        <td>Ligada al scroll</td>
+                        <td>
+                            Mostrar los artistas conforme se descubre
+                            la página.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Tarjetas de artistas</td>
+                        <td>Transformación 3D</td>
+                        <td>RotateY y translateY</td>
+                        <td>150 ms</td>
+                        <td>
+                            Dar profundidad visual al contenido interactivo.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Botones</td>
+                        <td>Transition</td>
+                        <td>Transform y opacity</td>
+                        <td>150 ms</td>
+                        <td>
+                            Confirmar visualmente la interacción.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Favoritos</td>
+                        <td>Microinteracción</td>
+                        <td>Transform: scale()</td>
+                        <td>150 ms</td>
+                        <td>
+                            Indicar que un artista ha sido seleccionado.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Menú móvil</td>
+                        <td>Transition</td>
+                        <td>Opacity y transform</td>
+                        <td>350 ms</td>
+                        <td>
+                            Mostrar la apertura y cierre del menú.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- =================================
+             04. MICROINTERACCIONES
+        ================================== -->
+
+        <section>
+
+            <h2>04. Microinteracciones</h2>
+
+            <h3>Botones y enlaces</h3>
+
+            <p>
+                Los botones reaccionan al pasar el ratón
+                y al pulsarlos. Al activarse reducen ligeramente
+                su tamaño para transmitir una sensación de respuesta.
+            </p>
+
+            <h3>Favoritos</h3>
+
+            <p>
+                El botón de favoritos aumenta ligeramente su tamaño
+                cuando se activa. De esta manera, el usuario recibe
+                una confirmación visual de su selección.
+            </p>
+
+            <h3>Menú móvil</h3>
+
+            <p>
+                El menú utiliza una transición de opacidad
+                y desplazamiento vertical para mostrar su apertura
+                y cierre de manera progresiva.
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             05. ANIMACIONES Y PROFUNDIDAD
+        ================================== -->
+
+        <section>
+
+            <h2>05. Animaciones y profundidad</h2>
+
+            <h3>Entrada del hero</h3>
+
+            <p>
+                El título principal aparece desplazándose desde abajo
+                mientras aumenta su opacidad. Esto establece una
+                jerarquía visual y dirige la atención al contenido
+                principal.
+            </p>
+
+            <h3>Aparición de artistas</h3>
+
+            <p>
+                Las tarjetas aparecen progresivamente cuando entran
+                en la zona visible de la pantalla. El movimiento
+                acompaña el desplazamiento del usuario.
+            </p>
+
+            <h3>Transformación 3D</h3>
+
+            <p>
+                Las tarjetas de artistas utilizan perspective
+                y rotateY para crear una ligera sensación de
+                profundidad cuando el usuario interactúa con ellas.
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             06. ACCESIBILIDAD Y RENDIMIENTO
+        ================================== -->
+
+        <section>
+
+            <h2>06. Accesibilidad y rendimiento</h2>
+
+            <p>
+                El proyecto tiene en cuenta las preferencias
+                de movimiento del usuario mediante la consulta
+                prefers-reduced-motion.
+            </p>
+
+            <h3>Movimiento reducido</h3>
+
+            <p>
+                Cuando el sistema operativo indica que el usuario
+                prefiere reducir el movimiento, las animaciones
+                y transiciones se desactivan prácticamente
+                por completo.
+            </p>
+
+            <p>
+                El contenido permanece visible y funcional,
+                sin depender de las animaciones para poder
+                utilizar la web.
+            </p>
+
+            <h3>Estados de interacción</h3>
+
+            <p>
+                Los enlaces y botones incorporan estados hover,
+                active y focus-visible para facilitar la interacción
+                con ratón y teclado.
+            </p>
+
+            <h3>Rendimiento</h3>
+
+            <p>
+                Se priorizan las propiedades transform y opacity
+                para conseguir animaciones fluidas y reducir
+                el trabajo de repintado del navegador.
+            </p>
+
+            <p>
+                Las animaciones no deben impedir la lectura,
+                la navegación ni la comprensión del contenido.
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             07. CONCLUSIÓN
+        ================================== -->
+
+        <section>
+
+            <h2>07. Conclusión</h2>
+
+            <p>
+                El movimiento de VIBRA FEST 2027 forma parte
+                de su identidad visual. Las transiciones,
+                animaciones y microinteracciones ayudan a
+                transmitir energía, mejorar la navegación
+                y destacar los elementos importantes.
+            </p>
+
+            <p>
+                El objetivo es conseguir una web dinámica,
+                accesible y coherente, donde cada movimiento
+                tenga una intención.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================
+         PIE DE PÁGINA
+    ================================== -->
+
+    <footer>
+
+        <p><strong>VIBRA FEST 2027</strong></p>
+
+        <p>Proyecto de Diseño de Interfaces · UD7</p>
+
+        <p>Movimiento con intención</p>
+
+        <p>
+            <a href="index.html">Volver al inicio</a>
+        </p>
+
+    </footer>
+
+
+    <!-- =================================
+         JAVASCRIPT DEL MENÚ MÓVIL
+    ================================== -->
+
+    <script>
+
+        const botonMenu = document.getElementById("boton-menu");
+        const menuPrincipal = document.getElementById("menu-principal");
+
+        botonMenu.addEventListener("click", function () {
+
+            const abierto = menuPrincipal.classList.toggle("activo");
+
+            botonMenu.setAttribute("aria-expanded", abierto);
+
+            botonMenu.setAttribute(
+                "aria-label",
+                abierto ? "Cerrar menú" : "Abrir menú"
+            );
+
+            botonMenu.textContent = abierto ? "✕" : "☰";
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artistas | VIBRA FEST</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <header>
+
+        <a href="index.html" class="logo">
+            VIBRA<span>FEST</span>
+        </a>
+
+        <!-- BOTÓN MENÚ MÓVIL -->
+        <button class="menu-movil"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+            ☰
+        </button>
+
+        <!-- NAVEGACIÓN -->
+        <nav id="menu-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="index.html#entradas">Entradas</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- SECCIÓN DE ARTISTAS -->
+        <section class="artistas">
+
+            <div class="titulo-seccion">
+
+                <p class="subtitulo">VIBRA FEST 2027</p>
+
+                <h2>CONOCE A LOS <span>ARTISTAS</span></h2>
+
+                <p>
+                    Descubre quién pondrá música a nuestro festival.
+                </p>
+
+            </div>
+
+            <div class="contenedor-artistas">
+
+                <!-- ARTISTA 1 -->
+                <article class="tarjeta-artista">
+
+                    <img src="img/dj-nova.jpg"
+                         alt="DJ actuando en un escenario">
+
+                    <div class="info-artista">
+
+                        <h3>DJ NOVA</h3>
+
+                        <p>Electrónica</p>
+
+                        <button class="boton-favorito"
+                                type="button"
+                                aria-label="Añadir a favoritos"
+                                aria-pressed="false">
+                            ♡
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- ARTISTA 2 -->
+                <article class="tarjeta-artista">
+
+                    <img src="img/luna-ray.jpg"
+                         alt="Cantante actuando en directo">
+
+                    <div class="info-artista">
+
+                        <h3>LUNA RAY</h3>
+
+                        <p>Pop</p>
+
+                        <button class="boton-favorito"
+                                type="button"
+                                aria-label="Añadir a favoritos"
+                                aria-pressed="false">
+                            ♡
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- ARTISTA 3 -->
+                <article class="tarjeta-artista">
+
+                    <img src="img/the-volt.jpg"
+                         alt="Guitarrista actuando en un concierto">
+
+                    <div class="info-artista">
+
+                        <h3>THE VOLT</h3>
+
+                        <p>Rock</p>
+
+                        <button class="boton-favorito"
+                                type="button"
+                                aria-label="Añadir a favoritos"
+                                aria-pressed="false">
+                            ♡
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>© 2027 VIBRA FEST</p>
+
+        <p>Festival de música · Madrid</p>
+
+        <a href="index.html">VOLVER AL INICIO</a>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/menu.js"></script>
+
+</body>
+</html>
